@@ -13,4 +13,8 @@ public class contactControllerCls {
     public static String SayWorld(){
         return "World";
     }
+
+     public static String SayHi(){
+        return "Hi";
+    }
 }
