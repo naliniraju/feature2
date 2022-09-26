@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
- <types>
+    <types>
         <members>contactControllerCls</members>
         <name>ApexClass</name>
     </types>
@@ -9,9 +9,13 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>ContactEditDataService</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
         <members>Contact.CustomField1__c</members>
         <name>CustomField</name>
     </types>
- 
+   
     <version>55.0</version>
 </Package>

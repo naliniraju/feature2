@@ -7,14 +7,4 @@ public class contactControllerCls {
              WHERE AccountId=:recId];
         return contacts;
     }
-    public static String SayHello(){
-        return "Hello";
-    }
-    public static String SayWorld(){
-        return "World";
-    }
-
-     public static String SayHi(){
-        return "Hi";
-    }
 }

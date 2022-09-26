@@ -1,0 +1,47 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!--Declare Atrribute-->
+    <aura:attribute name="contact" type="Object"/>
+    <aura:attribute name="contactRecord" type="Object"/>
+    <aura:attribute name="recordSaveError" type="String"/>
+     
+    <force:recordData aura:id="conRec"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}" 
+                      targetError="{!v.recordSaveError}"
+                      targetRecord="{!v.contact}"
+                      targetFields="{!v.contactRecord}"
+                      mode="EDIT"
+                      recordUpdated="{!c.handaleRecordUpdated}"/>
+     
+    <div class="slds-box"> 
+        <div class="slds-text-heading_medium">
+            {!v.contactRecord.Name}
+        </div> 
+         
+        <aura:if isTrue="{!not(empty(v.recordSaveError))}">
+            <br />
+            <div class="error slds-box">
+                {!v.recordSaveError}
+            </div> 
+        </aura:if>
+         
+        <div class="slds-form--stacked slds-tile"> 
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Phone: </label>
+                <div class="slds-form-element__control">
+                    <lightning:input type="tel" value="{!v.contactRecord.Phone}" name="phone" required="true"/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Email: </label>
+                <div class="slds-form-element__control">
+                    <lightning:input type="email" aura:id="email" value="{!v.contactRecord.Email}" required="true"/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <lightning:button variant="brand" title="Save" label="Save" onclick="{!c.handleSaveContact}"/>
+                <lightning:button title="Cancel" label="Cancel" onclick="{!c.handaleCancel}"/>
+            </div>
+        </div>
+    </div>
+</aura:component>
