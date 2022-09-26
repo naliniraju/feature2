@@ -10,4 +10,7 @@ public class contactControllerCls {
     public static String SayHello(){
         return "Hello";
     }
+    public static String SayWorld(){
+        return "World";
+    }
 }
